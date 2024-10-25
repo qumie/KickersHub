@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>Halaman Admin</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Halaman Admin</h1>
+        <form id="videoForm">
+            <label for="title">Judul:</label>
+            <input type="text" id="title" required>
+            
+            <label for="source">Sumber:</label>
+            <input type="url" id="source" required>
+            
+            <label for="poster">URL Poster (JPEG):</label>
+            <input type="text" id="poster" placeholder="Masukkan URL gambar (akhiran .jpeg atau .jpg)" required>
+            
+            <button type="submit">Tambah Video</button>
+        </form>
+        
+        <ul id="list"></ul>
+
+        <div class="pagination">
+            <button id="prevPage" disabled>Halaman Sebelumnya</button>
+            <button id="nextPage">Halaman Berikutnya</button>
+        </div>
+    </div>
+    
+    <script src="admin.js"></script>
+</body>
+</html>

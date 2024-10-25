@@ -1,0 +1,209 @@
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #000; /* Navbar hitam */
+    padding: 10px 0;
+    width: 100%;
+}
+
+.navbar .container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+	 padding: 8px;
+}
+
+.nav-link {
+    color: #fff; /* Teks putih agar terlihat di navbar hitam */
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #333; /* Warna abu-abu saat hover */
+    border-radius: 5px;
+}
+
+/* About Section */
+.about-section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Gaya untuk Input Pencarian */
+.search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    margin-left: 15px;
+}
+
+.search-button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #555;
+}
+
+/* Konten Utama */
+.container.main-content {
+    max-width: 1200px;
+    margin: 0px auto; /* Tambahkan margin atas dan bawah */
+    padding: 20px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff); /* Gradasi selaras dengan .page-title */
+    border-radius: 0px; /* Sesuaikan dengan .page-title */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Judul Halaman */
+.page-title {
+    font-family: 'Impact', sans-serif;
+    font-size: 3em;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    padding: 20px 30px;
+    border-radius: 10px;
+    position: relative;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.highlight-description {
+    font-size: 1.5em; /* Ukuran font yang lebih besar */
+    color: #ffffff; /* Warna teks putih */
+    text-align: center; /* Rata tengah */
+    margin: 20px 0; /* Margin atas dan bawah */
+    background-color: #0072ff; /* Latar belakang biru */
+    padding: 15px; /* Padding untuk ruang di dalam */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Bayangan untuk kedalaman */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
+    letter-spacing: 1px; /* Jarak antar huruf */
+    font-family: 'Impact', sans-serif; /* Font yang sporty */
+    position: relative; /* Untuk efek latar belakang */
+}
+
+.highlight-description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 120%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1) 5px,
+        transparent 5px,
+        transparent 10px
+    );
+    transform: translateX(-50%) rotate(25deg);
+    opacity: 0.1;
+    z-index: 0; /* Di bawah teks */
+}
+
+.highlight-description span {
+    position: relative;
+    z-index: 1; /* Di atas latar belakang */
+}
+/* Video List */
+.video-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.video-list li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-list li:hover {
+    transform: scale(1.05);
+}
+
+/* Gambar Poster Video */
+.video-list img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Judul Video */
+.video-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #212529;
+    text-align: center;
+    margin-top: 10px;
+    display: block;
+    white-space: normal;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination-button:hover {
+    background-color: #0056b3;
+}
+
+.pagination-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Footer */
+.footer {
+    background-color: #000;
+	 text-align: center;
+    padding: 10px 0;
+    width: 100%;

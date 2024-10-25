@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Gunakan styles.css agar konsisten dengan halaman index -->
+    <title>KickersHub Video Play</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script> <!-- HLS.js CDN -->
+    <style>
+        /* Gaya tambahan untuk pemutar video */
+        .video-player {
+            border: 3px solid #007BFF; /* Border biru pada video */
+            border-radius: 8px; /* Sudut melengkung */
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); /* Bayangan untuk efek 3D */
+        }
+
+        /* Gaya tambahan untuk chat room */
+        .comment-section {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #007BFF; /* Border biru pada area komentar */
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            max-height: 300px; /* Batasi tinggi area komentar */
+            overflow-y: auto; /* Gulir jika komentar terlalu banyak */
+        }
+
+        .comment {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #007BFF;
+            border-radius: 5px;
+            background-color: #e9ecef;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        .comment-time {
+            font-size: 0.8em;
+            color: #6c757d;
+        }
+
+        .comment-input {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .comment-input input,
+        .comment-input textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #007BFF;
+            border-radius: 5px;
+        }
+
+        .button-group {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Tambahkan ini untuk vertikal align */
+        }
+
+        .comment-count {
+            margin-left: 10px; /* Jarak antara tombol dan jumlah komentar */
+            font-weight: bold;
+        }
+
+        .back-button,
+        .like-dislike button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .like-dislike button {
+            background-color: #28a745; /* Warna hijau untuk tombol suka */
+            color: white;
+        }
+
+        .like-dislike button:hover {
+            background-color: #218838; /* Warna hijau gelap saat hover */
+        }
+
+        .like-dislike button:nth-child(2) {
+            background-color: #dc3545; /* Warna merah untuk tombol tidak suka */
+        }
+
+        .like-dislike button:nth-child(2):hover {
+            background-color: #c82333; /* Warna merah gelap saat hover */
+        }
+
+        /* Gaya untuk tombol kirim komentar */
+        .comment-input button {
+            background-color: #007BFF; /* Warna biru untuk tombol kirim */
+            color: white;
+            border: none;
+            padding: 10px;
+        }
+
+        .comment-input button:hover {
+            background-color: #FF0000; /* Warna biru gelap saat hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="nav-link" id="aboutLink">About</a>
+            <input type="text" id="searchInput" class="search-input" placeholder="Cari video berdasarkan judul...">
+            <button id="searchButton" class="search-button">Cari</button>
+        </div>
+    </nav>
+    
+    <!-- About Section (Default: Hidden) -->
+    <div id="aboutSection" class="about-section" style="display: none;">
+        <h2>About</h2>
+        <p>Selamat datang di situs kami, pusat terbaik untuk menonton video <strong>highlight sepak bola extended</strong> terlengkap!</p>
+        <p>Situs ini dirancang bagi para pecinta sepak bola yang ingin menyaksikan kembali aksi-aksi seru dari pertandingan favorit mereka dengan kualitas terbaik.</p>
+        <p>Email kami di: <a href="mailto:sriwahyudiiman@gmail.com">sriwahyudiiman@gmail.com</a></p>
+    </div>
+    
+    <!-- Konten Utama Pemutar Video -->
+    <div class="container main-content">
+        <h1 class="page-title">KickersHub</h1>
+        <div id="videoInfo" class="video-info"></div>
+        
+        <!-- Tombol Kembali, Suka, dan Tidak Suka -->
+        <div class="button-group">
+            <button class="back-button" onclick="goBack()">Kembali</button>
+            <span class="comment-count" id="commentCountDisplay">Komentar (0)</span> <!-- Menampilkan jumlah komentar -->
+            <div class="like-dislike">
+                <button id="likeButton">Suka (<span id="likeCount">0</span>)</button>
+                <button id="dislikeButton">Tidak Suka (<span id="dislikeCount">0</span>)</button>
+            </div>
+        </div>
+
+        <!-- Area Komentar -->
+        <div class="comment-section" id="commentSection">
+            <h3>Komentar</h3>
+        </div>
+        <div class="comment-input">
+            <input type="text" id="username" placeholder="Nama Anda" required>
+            <textarea id="commentInput" rows="3" placeholder="Tulis komentar..." required></textarea>
+            <button id="submitCommentButton">Kirim</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Daftar Video. All rights reserved.</p>
+    </footer>
+
+    <script src="videoPlayer.js"></script> <!-- Panggil file JavaScript terpisah -->
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Gaya CSS untuk tampilan -->
+    <title>KickersHub</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script> <!-- HLS.js CDN -->
+    <script src="script.js" defer></script> <!-- Menghubungkan script.js -->
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="nav-link" id="aboutLink">About</a>
+            <input type="text" id="searchInput" class="search-input" placeholder="Cari video berdasarkan judul...">
+            <button id="searchButton" class="search-button">Cari</button>
+        </div>
+    </nav>
+    <!-- About Section (Default: Hidden) -->
+    <div id="aboutSection" class="about-section" style="display: none;">
+        <h2>About</h2>
+        <p>Selamat datang di situs kami, pusat terbaik untuk menonton video <strong>highlight sepak bola extended</strong> terlengkap! Kami menghadirkan tayangan eksklusif dari momen-momen penting dalam setiap pertandingan, mulai dari gol spektakuler hingga aksi-aksi mendebarkan di lapangan hijau.</p>
+        <p>Situs ini dirancang bagi para pecinta sepak bola yang ingin menyaksikan kembali aksi-aksi seru dari pertandingan favorit mereka dengan kualitas terbaik. Dengan koleksi highlights yang terus diperbarui, Anda tidak akan ketinggalan setiap momen penting dari liga-liga besar di seluruh dunia.</p>
+        <p>Terima kasih telah mengunjungi kami, dan nikmati pengalaman menonton yang tak terlupakan!</p>
+        <h2>Contact Us</h2>
+        <p>If you have any questions, comments, or suggestions, we’d love to hear from you. Feel free to get in touch via email:</p>
+        <p>Email us at: <a href="mailto:sriwahyudiiman@gmail.com">sriwahyudiiman@gmail.com</a></p>
+    </div>
+    <!-- Konten Utama Daftar Video -->
+    <div class="container main-content">
+        <h1 class="page-title">KickersHub</h1>
+        <!-- Tag kata-kata untuk pusat highlights -->
+        <p class="highlight-description">Pusat highlights sepak bola untuk para pecinta sepak bola. Saksikan momen-momen terbaik dari setiap pertandingan!</p>
+        <ul id="list" class="video-list"></ul> <!-- Daftar video akan ditampilkan di sini -->
+        <div class="pagination">
+            <button id="prevPage" class="pagination-button">Sebelumnya</button>
+            <button id="nextPage" class="pagination-button">Berikutnya</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 KickersHub. All rights reserved.</p>
+    </footer>
+</body>
+</html>

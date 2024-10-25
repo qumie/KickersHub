@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow-x: hidden; /* Mencegah konten meluap secara horizontal */
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    word-wrap: break-word; /* Membuat teks h1 otomatis pindah baris jika terlalu panjang */
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input, button {
+    margin: 5px 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.video-item {
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    word-wrap: break-word; /* Membuat teks dalam .video-item tetap di dalam kotak */
+    overflow: hidden;
+}
+
+.video-item h2,
+.video-item p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Jika teks terlalu panjang, tambahkan ... di akhir */
+    max-width: 100%; /* Membatasi lebar teks agar sesuai dengan kotak */
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    cursor: pointer;
+}
